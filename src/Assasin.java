@@ -2,6 +2,7 @@ class Assasin extends Character{
     public Assasin(String name){
         super(name,20, 20, 10, 10, 1, 10);
         this.characterClass = "Assasin";
+        maxStats();
     }
 
     public void attack(){

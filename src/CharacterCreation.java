@@ -31,7 +31,7 @@ class Character{
         System.out.println("Character class: " + characterClass);
         System.out.println("Level: " + level);
         System.out.println("Strength: " + strength);
-        System.out.println("Accuraty: " + accuracy);
+        System.out.println("Accuracy: " + accuracy);
         System.out.println("Intelligence: " + intelligence);
         System.out.println("Health: " + health);
         System.out.println("Agility: " + agility);
@@ -49,6 +49,18 @@ class Character{
         intelligence = Math.min(75, (int) (Math.random() * 101));
         gold = Math.min(200, (int) (Math.random() * 300));
     };
+
+    public void maxStats(){
+        if(strength > 75){
+            this.strength = 75;
+        }if(agility > 75){
+            this.agility = 75;
+        }if(accuracy > 75){
+            this.accuracy = 75;
+        }if(intelligence > 75){
+            this.intelligence = 75;
+        }
+    }
 
     public void attack(){};
 

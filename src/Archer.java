@@ -2,6 +2,7 @@ class Archer extends Character{
     public Archer(String name){
         super(name, 20, 20, 10, 10, 1, 10);
         this.characterClass = "Archer";
+        maxStats();
     }
 
     public void attack(){

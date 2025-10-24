@@ -2,7 +2,7 @@ class Warrior extends Character{
     public Warrior(String name){
         super(name, 20, 20, 10, 10, 2, 10); //////
         this.characterClass = "Warrior";
-        //
+        maxStats();
     }
 
     public void attack(){
