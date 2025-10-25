@@ -13,6 +13,8 @@ class Character{
     protected int armor;
     protected int gold;
 
+    Character(){};
+
     Character(String name, int strength, int health, int agility, int accuracy, int armor, int intelligence) {
         basicRollStats(); // rollujesz basic..
         this.name = name;

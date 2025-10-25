@@ -8,38 +8,40 @@ void main(String[] args) {
     //Character warrior = (Character) character;
     //warrior.getClass();
 
-    Object character1;
-    character1 = InputClass(sc, name);
-    System.out.println(character1.getClass());
+    Character character1 = new Character();
+    int characterClass = InputClass(sc);
+
+    if(characterClass == 1){
+        character1 = new Warrior(name);
+    }else if(characterClass == 2){
+        character1 = new Mage(name);
+    }else if(characterClass == 3){
+        character1 = new Archer(name);
+    }else if(characterClass == 4){
+        character1 = new Assasin(name);
+    };
+
+    character1.showStats();
+
     sc.close();
 }; //you forget so easy u_uuu
 
-public Object InputClass(Scanner sc, String name){
-    Object newCharacter;
+public int InputClass(Scanner sc){
+    int characterClass;
     while(true){
         System.out.println("Wybierz klasę (Od 1 do 4)" +
                 "\n 1. Warrior " +
                 "\n 2. Mage " +
                 "\n 3. Archer " +
                 "\n 4. Assasin");
-        int characterClass = sc.nextInt();
-        if (characterClass == 1) {
-            newCharacter = new Warrior(name);
-            break;
-        } else if (characterClass == 2) {
-            newCharacter = new Mage(name);
-            break;
-        } else if (characterClass == 3) {
-            newCharacter = new Archer(name);
-            break;
-        } else if (characterClass == 4) {
-            newCharacter = new Assasin(name);
+        characterClass = sc.nextInt();
+        if(characterClass > 0 && characterClass < 5){
             break;
         } else {
             System.out.println("Niepoprawna klasa");
         };
     };
-    return newCharacter;
+    return characterClass;
 };
 
 public String InputName(Scanner sc){
