@@ -22,6 +22,10 @@ void main(String[] args) {
     };
 
     character1.showStats();
+    System.out.println(character1.getClass());
+
+    Enemy enemy1 = new Enemy("enemy1");
+    enemy1.StartFight(enemy1, character1, sc);
 
     sc.close();
 }; //you forget so easy u_uuu
