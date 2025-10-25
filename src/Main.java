@@ -7,7 +7,8 @@ void main(String[] args) {
     //InputClass(sc, character);
     //Character warrior = (Character) character;
     //warrior.getClass();
-
+    Lore lore = new Lore();
+    Shop shop = new Shop();
     Character character1 = new Character();
     int characterClass = InputClass(sc);
 
@@ -22,11 +23,16 @@ void main(String[] args) {
     };
 
     character1.showStats();
+<<<<<<< HEAD
     System.out.println(character1.getClass());
 
     Enemy enemy1 = new Enemy("enemy1");
     enemy1.StartFight(enemy1, character1, sc);
 
+=======
+    lore.Początek();
+    shop.showShop();
+>>>>>>> ee24e2ac46ea6f600078d61d00c1e3e134c2b06c
     sc.close();
 }; //you forget so easy u_uuu
 
