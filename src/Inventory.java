@@ -17,6 +17,15 @@ class Item{
             {"Aleminium","Zwiększa pancerz 1k3 na turę"}
     };
 
+    protected String[][] characters_inventory = {
+            {"","",""},
+            {"","",""},
+            {"","",""},
+            {"","",""},
+            {"","",""},
+            {"","",""}
+    };
+
     Item(int amount, int x, int price){
         this.amount = amount;
         this.name = possible_inventory_items[x][0]; //

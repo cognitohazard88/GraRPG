@@ -7,7 +7,8 @@ void main(String[] args) {
     //InputClass(sc, character);
     //Character warrior = (Character) character;
     //warrior.getClass();
-
+    Lore lore = new Lore();
+    Shop shop = new Shop();
     Character character1 = new Character();
     int characterClass = InputClass(sc);
 
@@ -22,7 +23,8 @@ void main(String[] args) {
     };
 
     character1.showStats();
-
+    lore.Początek();
+    shop.showShop();
     sc.close();
 }; //you forget so easy u_uuu
 
