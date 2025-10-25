@@ -60,7 +60,7 @@ class Character{
         }if(intelligence > 75){
             this.intelligence = 75;
         }
-    }
+    };
 
     public void attack(){};
 
