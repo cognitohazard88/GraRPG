@@ -3,12 +3,10 @@ import java.util.Scanner;
 void main(String[] args) {
     Scanner sc = new Scanner(System.in);
     String name = InputName(sc);
-    //Character character = new Character(name, 20, 20, 10, 10, 1, 10);
-    //InputClass(sc, character);
-    //Character warrior = (Character) character;
-    //warrior.getClass();
+
     Lore lore = new Lore();
     Shop shop = new Shop();
+    Inventory inventory = new Inventory();
     Character character1 = new Character();
     int characterClass = InputClass(sc);
 
@@ -31,9 +29,10 @@ void main(String[] args) {
     //enemy1.StartFight(enemy1, character1, sc);
 
     //lore.Początek();
-    //shop.showShop();
+
+    shop.showShop(sc, character1, inventory);
     sc.close();
-}; //you forget so easy u_uuu
+};
 
 public int InputClass(Scanner sc){
     int characterClass;
