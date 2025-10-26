@@ -6,26 +6,44 @@ class Inventory extends Item{
         this.amount = 0;
     };
 
-    public void useItem(String name, Scanner scan){
+    public void chooseItem(String name, Scanner scan){
         showItemList();
         if(amount!=0){
-            System.out.println("Którego przedmiotu chcesz użyć? (Wpisz nazwe) (E - exit)");
-            String x = scan.nextLine();
-            for(int i=0; i<currentInventory.length; i++){
-                if(x.equals(currentInventory[i][0])){
-                    System.out.println("> use item [U]\n> show description [D]");
-                    String y = scan.nextLine();
-                    if(y.equals("U")){
-                        System.out.println("Are you sure? (Y/N)");
-                        String a = scan.nextLine();
-                        if(a.equals("Y")){
-
+            while(true){
+                System.out.println("Którego przedmiotu chcesz użyć? (Wpisz nazwe) (E - exit)");
+                String x = scan.nextLine();
+                if(x.equals("E")){
+                    break;
+                }else{
+                    for(int i=0; i<currentInventory.length; i++){
+                        if(x.equals(currentInventory[i][0])){
+                            while(true){
+                            System.out.println("> use item [U]\n> show description [D]\n> exit [E]");
+                            String y = scan.nextLine();
+                            if(y.equals("U")){
+                                while(true){
+                                System.out.println("Are you sure? (Y/N)");
+                                String a = scan.nextLine();
+                                if(a.equals("Y")){
+                                    useItem(x);
+                                }else if(a.equals("N")) {
+                                    break;
+                                };}
+                            } else if (y.equals("D")){
+                                showDescription(i);
+                            } else if (y.equals("E")){
+                                break;
+                            };}
                         }
                     }
                 }
             }
         }
     };
+
+    public void useItem(String name){
+
+    }
 
     public void removeUsedItem(String name){
         while(true){
