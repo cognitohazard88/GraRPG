@@ -53,6 +53,10 @@ class Item{
         };
     };
 
+    public void showDescription(int x){
+        System.out.println(currentInventory[x][2]);
+    };
+
 //    protected String[][] characters_inventory = {
 //            {"","",""},
 //            {"","",""},
