@@ -2,10 +2,16 @@ class Archer extends Character{
     public Archer(String name){
         super(name, 20, 20, 10, 10, 1, 10);
         this.characterClass = "Archer";
+        this.specialAttackName = "Śmiercionośny strzał";
+        this.specialAttackDescription = "Twoje strzały zawsze trafią w twój cel";
         maxStats();
     }
 
     public void attack(){
         //???????????????????????????????????????????????
     };
+
+    public void specialattack(){
+
+    }
 };

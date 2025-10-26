@@ -28,7 +28,7 @@ void main(String[] args) {
     //Enemy enemy1 = new Enemy("enemy1");
     //enemy1.StartFight(enemy1, character1, sc);
 
-    //lore.Początek();
+    lore.Początek();
 
     shop.showShop(sc, character1, inventory);
     sc.close();

@@ -3,6 +3,8 @@ import java.util.Scanner;
 class Character{
     protected String name; //bluh musi być protected a nie private bo takto np Mage nie może dostać sie do nich ok?
     protected String characterClass;
+    protected String specialAttackName;
+    protected String specialAttackDescription;
     protected int level;
     protected int strength;
     protected int health;
@@ -31,6 +33,8 @@ class Character{
     public void showStats(){
         //System.out.println("Name: " + name);
         System.out.println("Character class: " + characterClass);
+        System.out.println("Character's special attack: " + specialAttackName);
+        System.out.println("Character's special attack description: " + specialAttackDescription);
         System.out.println("Level: " + level);
         System.out.println("Strength: " + strength);
         System.out.println("Accuracy: " + accuracy);

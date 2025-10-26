@@ -2,6 +2,7 @@ import java.util.Scanner;
 //
 interface Attackable{
    public void attack();
+   public void specialattack();
 };
 //
 //class Enemy extends Character{
