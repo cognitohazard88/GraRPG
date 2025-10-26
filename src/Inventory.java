@@ -5,14 +5,11 @@ class Inventory extends Item{
         super();
         this.amount = 0;
     };
-//
-    //hm
-    //i mean ja jeszcze teraz patrze co zrobił adam
 
-    public void chooseItem(String name, Scanner scan){
+    public void chooseItem(Character character, Scanner scan, Fight battle){
         showItemList();
         if(amount!=0){
-            while(true){
+            while(battle.yourTurn){
                 System.out.println("Którego przedmiotu chcesz użyć? (Wpisz nazwe) (E - exit)");
                 String x = scan.nextLine();
                 if(x.equals("E")){
@@ -21,21 +18,23 @@ class Inventory extends Item{
                     for(int i=0; i<currentInventory.length; i++){
                         if(x.equals(currentInventory[i][0])){
                             while(true){
-                            System.out.println("> use item [U]\n> show description [D]\n> exit [E]");
-                            String y = scan.nextLine();
-                            if(y.equals("U")){
-                                while(true){
-                                System.out.println("Are you sure? (Y/N)");
-                                String a = scan.nextLine();
-                                if(a.equals("Y")){
-                                    useItem(x);
-                                }else if(a.equals("N")) {
+                                System.out.println("> use item [U]\n> show description [D]\n> exit [E]");
+                                String y = scan.nextLine();
+                                if(y.equals("U")){
+                                    while(true){
+                                    System.out.println("Are you sure? (Y/N)");
+                                    String a = scan.nextLine();
+                                    if(a.equals("Y")){
+                                        useItem(i, character);
+                                        battle.addTurn();//CHUImmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm microwav
+                                        break;
+                                    }else if(a.equals("N")) {
+                                        break;
+                                    };}
+                                } else if (y.equals("D")){
+                                    showDescription(i);
+                                } else if (y.equals("E")){
                                     break;
-                                };}
-                            } else if (y.equals("D")){
-                                showDescription(i);
-                            } else if (y.equals("E")){
-                                break;
                             };}
                         }
                     }
@@ -44,24 +43,29 @@ class Inventory extends Item{
         }
     };
 
-    public void useItem(String name){
-
-    }
-
-    public void removeUsedItem(String name){
-        while(true){
-            for(int i = 0; i < currentInventory.length; i++){
-                if(name.equals(currentInventory[i][0])){
-                    int amount = Integer.parseInt(currentInventory[i][2]);
-                    if (amount != 0){
-                        amount--;
-                        currentInventory[i][2] = String.valueOf(amount);
-                    };
-                    break;
-                };
-            };
-            break;
+    public void useItem(int x, Character character){
+        if(x == 0){
+            character.setStrength(6);
+        }else if(x==1){
+            character.setIntelligence(6);
+        }else if(x==2){
+            character.setAccuracy(6);
+        }else if(x==3){
+            character.setAgility(6);
+        }else if(x==4){
+            character.setHealth(+10);
+        }else if(x==5){
+            character.setArmor(3);
         };
+
+        System.out.println(currentInventory[x][0]+" został użyty.");
+        removeUsedItem(x);
+    };
+
+    public void removeUsedItem(int x){
+        int amount = Integer.parseInt(currentInventory[x][2]);
+        amount--;
+        currentInventory[x][2] = String.valueOf(amount);
     };
 };
 

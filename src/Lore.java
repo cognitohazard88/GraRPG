@@ -2,7 +2,7 @@ public class Lore {
 
     Lore (){}
 
-    public void Początek() {
+    public void Poczatek() {
         System.out.println("Siedzisz sobie w tawernie popijając krasnoludzkie wino. Skoczna muzyka wypełniająca pomieszczenie zachęca innych biesiadujących do tańca" + "" +
                 "\nkiedy podszedł do ciebie zakapturzony mężczyzna podpierający się berłem z kryształem na końcu." +
                 "\nPo dobrej chwili kiedy udało mu się usiąść na miejscu przed tobą podniósł swój wzrok przebijając cię swoim błyskotliwym spojrzenie" +
@@ -19,4 +19,12 @@ public class Lore {
                 "\nPo zapłaceniu za swój pobyt w karczmie wychodzisz z budynku kierując się do pobliskiego sklepu zanim wyruszysz w podróź." +
                 "\nWitaj w moim sklepie! Czy chcesz zobaczyć moje oferty? (Tak/Nie)");
     }
+
+    public void PoSklepiePoczatkowym(){// japidi
+        System.out.println("Po szybkich zakupach wyruszasz w podróź kierując się na zachód." +
+                "\nPrzemierzasz gęste lasy wypełnione dzikimi zwierzętami i mistyczną fauną i florą kiedy spotykasz na swojej drodzę" +
+                "\ngrupę szczurów ziejących ogniem. Mimo prób uniknięcia walki jesteś zmuszony do odpowiedzi na atak");
+    }
+
+
 }

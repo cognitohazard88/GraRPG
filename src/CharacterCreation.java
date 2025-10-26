@@ -51,6 +51,8 @@ class Character{
     public void showStatsFight(){
         //System.out.println("Name: " + name);
         System.out.println("-----------------");
+        System.out.println("Character's attack: " + attackName + "\tCharacter's attack description: " + attackDescription);
+        System.out.println("Character's special attack: " + specialAttackName + "\tCharacter's special attack description: " + specialAttackDescription);
         System.out.println("Character class: " + characterClass + "\t Level: " + level);
         System.out.println("Strength: " + strength + "\t\t\t\t Accuracy: " + accuracy);
         System.out.println("Intelligence: " + intelligence + "\t\t\t Health: " + health);
@@ -81,19 +83,38 @@ class Character{
         }
     };
 
-    public void attack(int heroHealth, int enemyHealth, Character hero, Character enemy){};
+    public void attack(Character hero, Character enemy){};
 
-    public void specialAttack(int heroHealth, int enemyHealth,Character character, Character enemy){};
+    public void specialAttack(Character character, Character enemy){};
 
     public void setGold(int gold){
         this.gold = this.gold - gold;
     };
 
+    public void setHealth(int health){
+        this.health = health;
+    };
+    public void setStrength(int strength){
+        this.strength += strength;
+    };
 
+    public void setIntelligence(int intelligence){
+        this.intelligence += intelligence;
+    };
 
-    //                  _____   _____
-    //      /\         |   |   |   |
-    //    \====>       |   |   |   |
-    //       \/         |   |   |   |
-    // THEY HIT THE SECOND TOWER!!!
+    public void setAccuracy(int accuracy){
+        this.accuracy += accuracy;
+    };
+
+    public void setAgility(int agility){
+        this.agility += agility;
+    };
+
+    public void setArmor(int armor){
+        this.armor += armor;
+    };
+
+    public int getHealth(){
+        return health;
+    };
 };

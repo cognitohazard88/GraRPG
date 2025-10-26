@@ -5,35 +5,38 @@ void main(String[] args) {
     String name = InputName(sc);
 
     Lore lore = new Lore();
+    Ending ending = new Ending();
     Shop shop = new Shop();
     Inventory inventory = new Inventory();
-    Character character1 = new Character();
+    Character character = new Character();
+    Character characterClone = new Character();
     int characterClass = InputClass(sc);
 
     if(characterClass == 1){
-        character1 = new Warrior(name);
+        character = new Warrior(name);
     }else if(characterClass == 2){
-        character1 = new Mage(name);
+        character = new Mage(name);
     }else if(characterClass == 3){
-        character1 = new Archer(name);
+        character = new Archer(name);
     }else if(characterClass == 4){
-        character1 = new Assasin(name);
+        character = new Assasin(name);
     };
 
-    character1.showStats();
+    character.showStats();
     //System.out.println(character1.getClass());
 
     //character1.showStatsFight();
     //Enemy enemy1 = new Enemy("enemy1");
     //enemy1.StartFight(enemy1, character1, sc);
 
-    lore.Początek();
-
+    lore.Poczatek();
+    shop.showShop(sc, character, inventory);
+    lore.PoSklepiePoczatkowym();
     Enemy enemy1 = new Enemy("enemy1");
     Fight battle1 = new Fight();
-    battle1.StartFight(enemy1, character1, sc, inventory);
+    battle1.StartFight(enemy1, character, sc, inventory);
 
-    //shop.showShop(sc, character1, inventory);
+
     sc.close();
 };
 
