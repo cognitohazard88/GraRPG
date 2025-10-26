@@ -1,35 +1,64 @@
-//public class Inventory extends Item{
-//    String[] current_inventory_items;
-//};
+import java.security.PublicKey;
+
+class Inventory extends Item{
+    Inventory(){};
+
+    public void addItem(String name, String description){
+        while(true) {
+            int inventoryLength = currentInventory.length;
+
+            for (int i = 0; i < inventoryLength; i++) {
+                if (name.equals(currentInventory[i][0])) {
+                    int amount = Integer.parseInt(currentInventory[i][2]) + 1;
+                    currentInventory[i][2] = String.valueOf(amount);
+                    break;
+                };
+            };
+
+            String[] newItem = {name, description, "1"};
+            currentInventory[inventoryLength] = newItem;
+            break;
+        };
+    };
+
+    public void removeUsedItem(String name){
+        while(true){
+            for(int i = 0; i < currentInventory.length; i++){
+                if(name.equals(currentInventory[i][0])){
+                    int amount = Integer.parseInt(currentInventory[i][2]);
+                    if (amount != 0){
+                        amount--;
+                        currentInventory[i][2] = String.valueOf(amount);
+                    };
+                    break;
+                };
+            };
+            break;
+        };
+    };
+};
 
 class Item{
-    protected int amount;
+    protected String amount;
     protected String description;
     protected String name;
-    protected int price;
+    protected String[][] currentInventory;
 
-    protected String[][] possible_inventory_items = {
-            {"Witamina d3k2","zwieszka siłe w walce"},
-            {"Fentanyl","Zwiększa inteligęcje w walce"},
-            {"Okulary","Zwiększają celnośc w walce"},
-            {"Fursuit","Zwiększa zręczność w walce"},
-            {"Piwko","Uzdrawia 1k6 życia"},
-            {"Aleminium","Zwiększa pancerz 1k3 na turę"}
+    public void showItemList(){
+        int inventoryLength = currentInventory.length;
+        for(int i=0; i>inventoryLength; i++){
+            if(currentInventory[i][2].equals("0") == false){
+                System.out.println(currentInventory[i][1]);
+            };
+        };
     };
 
-    protected String[][] characters_inventory = {
-            {"","",""},
-            {"","",""},
-            {"","",""},
-            {"","",""},
-            {"","",""},
-            {"","",""}
-    };
-
-    Item(int amount, int x, int price){
-        this.amount = amount;
-        this.name = possible_inventory_items[x][0]; //
-        this.description = possible_inventory_items[x][1];
-        this.price = price;
-    };
+//    protected String[][] characters_inventory = {
+//            {"","",""},
+//            {"","",""},
+//            {"","",""},
+//            {"","",""},
+//            {"","",""},
+//            {"","",""}
+//    };
 }

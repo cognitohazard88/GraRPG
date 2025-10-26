@@ -26,10 +26,10 @@ class Character{
         this.speed = (int)Math.floor(this.agility/10);
         this.armor += armor;
         level = 1;
-    }
+    };
 
     public void showStats(){
-        System.out.println("Name: " + name);
+        //System.out.println("Name: " + name);
         System.out.println("Character class: " + characterClass);
         System.out.println("Level: " + level);
         System.out.println("Strength: " + strength);
@@ -40,7 +40,18 @@ class Character{
         System.out.println("Speed: " + speed);
         System.out.println("Armor: " + armor);
         System.out.println("Gold: " + gold);
-    } //hello
+    };
+
+    public void showStatsFight(){
+        //System.out.println("Name: " + name);
+        System.out.println("-----------------");
+        System.out.println("Character class: " + characterClass + "\t Level: " + level);
+        System.out.println("Strength: " + strength + "\t\t\t\t Accuracy: " + accuracy);
+        System.out.println("Intelligence: " + intelligence + "\t\t\t Health: " + health);
+        System.out.println("Agility: " + agility + "\t\t\t\t\t Speed: " + speed);
+        System.out.println("Armor: " + armor + "\t\t\t\t\t Gold: " + gold);
+        System.out.println("-----------------");
+    };
 
     public void basicRollStats(){
         strength = Math.min(75, (int) (Math.random() * 101));
