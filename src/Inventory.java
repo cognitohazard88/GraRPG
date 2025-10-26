@@ -3,6 +3,7 @@ import java.security.PublicKey;
 class Inventory extends Item{
     Inventory(){
         super();
+        this.amount = 0;
     };
 
     public void removeUsedItem(String name){
@@ -23,10 +24,8 @@ class Inventory extends Item{
 };
 
 class Item{
-    protected String amount;
-    protected String description;
     protected String name;
-    protected int price;
+    protected int amount;
     protected String[][] currentInventory;
 
     Item(){
@@ -42,10 +41,17 @@ class Item{
 
     public void showItemList(){
         int inventoryLength = currentInventory.length;
-        for(int i=0; i>inventoryLength; i++){
-            if(currentInventory[i][2].equals("0") == false){
-                System.out.println(currentInventory[i][1]);
+        while(true){
+            if (amount == 0){
+                System.out.println("Nic tutaj nie ma!");
+                break;
             };
+            for (int i = 0; i < inventoryLength; i++){
+                if (currentInventory[i][2].equals("0") == false) {
+                    System.out.println("nazwa: " + currentInventory[i][0] + " ilość: " + currentInventory[i][2]);
+                };
+            };
+            break;
         };
     };
 
@@ -59,12 +65,17 @@ class Item{
 
             for (int i = 0; i < inventoryLength; i++) {
                 if(name.equals(inventory.currentInventory[i][0])) {
-                    int amount = Integer.parseInt(inventory.currentInventory[i][2]) + 1;
-                    inventory.currentInventory[i][2] = String.valueOf(amount);
+                    int itemAmount = Integer.parseInt(inventory.currentInventory[i][2]) + 1;
+                    inventory.setAmount(String.valueOf(itemAmount), i);
                     break;
                 };
             };
             break;
         };
+    };
+
+    public void setAmount(String itemAmount, int x){
+        this.currentInventory[x][2] = itemAmount;
+        this.amount++;
     };
 }

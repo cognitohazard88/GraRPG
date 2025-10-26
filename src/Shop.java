@@ -36,7 +36,7 @@ public class Shop extends Item{
                         System.out.println(i+1 + ". " + currentInventory[i][0] + "\t Cena: "+currentInventory[i][2]+" gold");
                     };
 
-                    System.out.println("Co chcesz kupić?(1-6) (0 - Exit)");
+                    System.out.println("Co chcesz kupić?(1-6) (0 - Exit) (7 - Inventory)");
                     int Question1 = sc.nextInt();
                     if(Question1 >=1 && Question1 <= 6){
                         Question1--;
@@ -61,6 +61,8 @@ public class Shop extends Item{
                         System.out.println("Dowidzenia. Zapraszam ponownie!");
                         exit = 0;
                         break;
+                    } else if(Question1 == 7){
+                        inventory.showItemList();
                     };
                 };
             }

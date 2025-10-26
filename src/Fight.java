@@ -1,8 +1,8 @@
 import java.util.Scanner;
 //
-//interface Attackable{
-//    public void attack();
-//};
+interface Attackable{
+   public void attack();
+};
 //
 //class Enemy extends Character{
 //    public Enemy(String name){
