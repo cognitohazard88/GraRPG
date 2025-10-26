@@ -20,7 +20,7 @@ class Character{
     Character(){};
 
     Character(String name, int strength, int health, int agility, int accuracy, int armor, int intelligence) {
-        basicRollStats(); // rollujesz basic..
+        basicRollStats();
         this.name = name;
         this.strength += strength;
         this.health += health;
@@ -33,7 +33,6 @@ class Character{
     };
 
     public void showStats(){
-        //System.out.println("Name: " + name);
         System.out.println("Character class: " + characterClass);
         System.out.println("Character's special attack: " + specialAttackName);
         System.out.println("Character's special attack description: " + specialAttackDescription);
@@ -49,7 +48,6 @@ class Character{
     };
 
     public void showStatsFight(){
-        //System.out.println("Name: " + name);
         System.out.println("-----------------");
         System.out.println("Character's attack: " + attackName + "\tCharacter's attack description: " + attackDescription);
         System.out.println("Character's special attack: " + specialAttackName + "\tCharacter's special attack description: " + specialAttackDescription);
@@ -85,7 +83,7 @@ class Character{
 
     public void attack(Character hero, Character enemy){};
 
-    public void specialAttack(Character character, Character enemy){};
+    public void specialAttack(Character hero, Character enemy){};
 
     public void setGold(int gold){
         this.gold = this.gold - gold;

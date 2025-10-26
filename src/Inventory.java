@@ -22,15 +22,16 @@ class Inventory extends Item{
                                 String y = scan.nextLine();
                                 if(y.equals("U")){
                                     while(true){
-                                    System.out.println("Are you sure? (Y/N)");
-                                    String a = scan.nextLine();
-                                    if(a.equals("Y")){
-                                        useItem(i, character);
-                                        battle.addTurn();//CHUImmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm microwav
-                                        break;
-                                    }else if(a.equals("N")) {
-                                        break;
-                                    };}
+                                        System.out.println("Are you sure? (Y/N)");
+                                        String a = scan.nextLine();
+                                        if(a.equals("Y")){
+                                            useItem(i, character);
+                                            battle.addTurn();
+                                            break;
+                                        }else if(a.equals("N")) {
+                                            break;
+                                        };
+                                    }
                                 } else if (y.equals("D")){
                                     showDescription(i);
                                 } else if (y.equals("E")){

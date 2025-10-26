@@ -16,11 +16,10 @@ class Mage extends Character{
         System.out.println(hero.name + " does " + hero_damage + " damage! " + enemy.name + " is at " + enemy.health + "hp!!");
     };
 
-    public void specialattack(Character hero, Character enemy){
+    public void specialAttack(Character hero, Character enemy){
         int hero_hitting_chance = 100;
         int hero_damage = (int) Math.floor(hero.intelligence / 10 + 3);
         enemy.setHealth(enemy.health - hero_damage);
         System.out.println(hero.name + " does " + hero_damage + " damage! " + enemy.name + " is at " + enemy.health + "hp with the special attack!!");
-        System.out.println("HELP ME");
-    }
+    };
 };

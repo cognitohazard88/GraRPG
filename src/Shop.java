@@ -30,7 +30,7 @@ public class Shop extends Item{
                     if(Question1 >=1 && Question1 <= 6){
                         Question1--;
                         while (true){
-                            System.out.println(currentInventory[Question1][0] + "\n> show description [D]\n> buy item [B]");
+                            System.out.println(currentInventory[Question1][0] + "\n> show description [D]\n> buy item [B]\n> exit [E]");
                             String Question2 = sc.next();
                             if (Question2.equals("D")) {
                                 showDescription(Question1);
@@ -40,8 +40,7 @@ public class Shop extends Item{
                                 if (Question3.equals("Y")) {
                                     buyItem(currentInventory[Question1][0], currentInventory[Question1][1], currentInventory[Question1][2], c, inventory);
                                     break;
-                                } else if (Question3.equals("N")) {
-                                    System.out.println("Aw man :((");
+                                } else if (Question3.equals("E")) {
                                     break;
                                 };
                             };

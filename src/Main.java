@@ -8,8 +8,7 @@ void main(String[] args) {
     Ending ending = new Ending();
     Shop shop = new Shop();
     Inventory inventory = new Inventory();
-    Character character = new Character();
-    Character characterClone = new Character();
+    Character character = new Character();//papież umarł 20 min temu
     int characterClass = InputClass(sc);
 
     if(characterClass == 1){
@@ -32,11 +31,20 @@ void main(String[] args) {
     lore.Poczatek();
     shop.showShop(sc, character, inventory);
     lore.PoSklepiePoczatkowym();
-    Enemy enemy1 = new Enemy("enemy1");
+
+    Enemy enemy1 = new Enemy("Rats");
     Fight battle1 = new Fight();
     battle1.StartFight(enemy1, character, sc, inventory);
+    lore.PoPierwszejWalce();
 
+    Enemy enemy2 = new Enemy("Priests");
+    battle1.StartFight(enemy2, character, sc, inventory);
 
+    Enemy enemy3 = new Enemy("Dragon");
+    battle1.StartFight(enemy3, character, sc, inventory);
+
+    Enemy enemy4 = new Enemy("Prison Guards");
+    battle1.StartFight(enemy4, character, sc, inventory);
     sc.close();
 };
 

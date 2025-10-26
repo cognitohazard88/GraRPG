@@ -20,6 +20,7 @@ public class Ending {
                 "\nPo paru minutach kiedy książe cię zawołał wypuściłeś go z celi i pełny wdzięcznośći rzuca się w twoje męskie ramion." +
                 "\nWyprowadzasz go w swoich ramionach z fortecy po czym wracasz z nim karocą do zamku by dopilnować że zostanie bezpieczny" +
                 "\nPo 7 dniach w końcu docieracie do zamku gdzie książe został ukoronowany przed swoim ludem a jako zapłatę za twoje bohaterskie czyny" +
-                "\nksiąże oddał ci swoją rękę ,robiąc tym z ciebie swojego męża");
+                "\nksiąże oddał ci swoją rękę ,robiąc tym z ciebie swojego męża i ogłaszając cię bohaterem narodowym dla swojego królestwa." +
+                "\nPo waszym hucznym weselu żyjecie długo i szczęśliwie do końca swoich spokojnych dni");
     }
 }

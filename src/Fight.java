@@ -35,21 +35,26 @@ class Fight{
                 } else if (x.equals("I")) {
                     inventory.chooseItem(hero, scan, this);
                 } else if (x.equals("S")) {
-                    hero.showStats();
+                    hero.showStatsFight();
                 } else {
                     System.out.println("Try again...");
                 };
             };
-            enemy.attack(enemy, hero);
-            yourTurn = true;
+            if(enemy.getHealth() > 0){
+                enemy.attack(enemy, hero);
+                yourTurn = true;
+            };
         };
 
         if (hero.getHealth() <= 0){
             System.out.println("You're dead!! L");
             ending.Smierc();
+            System.exit(0);
         } else if (enemy.getHealth() <= 0){
             System.out.println("You win!! yayyyy");
         };
+
+        resetTurn();
     };
 
     public void attackList(Scanner sc, Character character, Character enemy, Fight battle){

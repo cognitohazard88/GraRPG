@@ -21,9 +21,21 @@ public class Lore {
     }
 
     public void PoSklepiePoczatkowym(){// japidi
-        System.out.println("Po szybkich zakupach wyruszasz w podróź kierując się na zachód." +
+        System.out.println("Po zrobieniu zapasów na drogę wyruszasz w podróź kierując się na zachód." +
                 "\nPrzemierzasz gęste lasy wypełnione dzikimi zwierzętami i mistyczną fauną i florą kiedy spotykasz na swojej drodzę" +
                 "\ngrupę szczurów ziejących ogniem. Mimo prób uniknięcia walki jesteś zmuszony do odpowiedzi na atak");
+    }
+
+    public void PoPierwszejWalce(){
+        System.out.println("Po pokonaniu ziejących ogniem szczurów znów wracasz do podróży mając nadzieje że dalsza część wędrówki minie bez problemów" +
+                "\nWychodząc z lasu widzisz odległe miasto spowite mrokiem i unoszącym się zapachem krwi niewinnych." +
+                "\nZbliżając się do miasteczka zauważasz nabite głowy osadników na pale przed wejściem i ślady rozmazanej krwi na murach." +
+                "\nPo przejściu przez bramę jedyne co słyszysz to agonalne krzyki mieszkańców wymieszane z dźwiekiem palących się domów." +
+                "\nidąc w głąb miasta dostrzegasz grupę uzbrojonych księży torturujących pozostałe żywe istoty w miasteczku" +
+                "\nPo zobaczeniu koszmaru dziejącego się w kiedyś tak pięknym miejscu nie możesz przejść obojętnie i wyzywasz grupę książy do walki.");
+    }
+    public void PoDrugiejWalce(){
+        System.out.println("Po pokonaniu księży, przeszukujesz ciała swoich przeciwników, w kieszeni jednego znajdujesz list. Zaczynasz go czytać." + );
     }
 
 
