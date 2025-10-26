@@ -5,6 +5,9 @@ class Inventory extends Item{
         super();
         this.amount = 0;
     };
+//
+    //hm
+    //i mean ja jeszcze teraz patrze co zrobił adam
 
     public void chooseItem(String name, Scanner scan){
         showItemList();

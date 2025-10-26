@@ -24,11 +24,14 @@ void main(String[] args) {
     //System.out.println(character1.getClass());
 
     //character1.showStatsFight();
-
     //Enemy enemy1 = new Enemy("enemy1");
     //enemy1.StartFight(enemy1, character1, sc);
 
     lore.Początek();
+
+    Enemy enemy1 = new Enemy("enemy1");
+    Fight battle1 = new Fight();
+    battle1.StartFight(enemy1, character1, sc, inventory);
 
     //shop.showShop(sc, character1, inventory);
     sc.close();

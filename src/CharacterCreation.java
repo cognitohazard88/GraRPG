@@ -81,9 +81,9 @@ class Character{
         }
     };
 
-    public void attack(Character hero, Character enemy, int turn){};
+    public void attack(int heroHealth, int enemyHealth, Character hero, Character enemy){};
 
-    public void specialAttack(Character hero, Character enemy, int turn){};
+    public void specialAttack(int heroHealth, int enemyHealth,Character character, Character enemy){};
 
     public void setGold(int gold){
         this.gold = this.gold - gold;
