@@ -1,16 +1,6 @@
 import java.util.Scanner;
 
 public class Shop extends Item{
-//    protected String[][] shop_items = {
-//            {"1.Witamina d3k2","zwieszka siłe w walce", "cena: 2"},
-//            {"2.Fentanyl","Zwiększa inteligęcje w walce", "cena: 2"},
-//            {"3.Okulary","Zwiększają celnośc w walce", "cena: 2"},
-//            {"4.Fursuit","Zwiększa zręczność w walce", "cena: 2"},
-//            {"5.Piwko","Uzdrawia 1k6 życia", "cena: 2"},
-//            {"6.Aleminium","Zwiększa pancerz 1k3 na turę", "cena: 2"}
-//    };
-
-
     Shop(){
         this.currentInventory = new String[][]{
                 {"Witamina d3k2","zwieszka siłe w walce", "2"}, //name, desc, price
@@ -71,7 +61,7 @@ public class Shop extends Item{
 
     public void buyItem(String name, String description, String price, Character c, Item inventory){
         int priceInt = Integer.parseInt(price);
-        if(c.gold > priceInt){
+        if(c.gold >= priceInt){
             inventory.addItem(name, description, inventory);
             c.setGold(priceInt);
             System.out.println("Dziękuję za zakupy!! (Twój gold: " + c.gold+")");

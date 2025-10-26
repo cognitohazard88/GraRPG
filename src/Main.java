@@ -21,16 +21,16 @@ void main(String[] args) {
     };
 
     character1.showStats();
-    System.out.println(character1.getClass());
+    //System.out.println(character1.getClass());
 
-    character1.showStatsFight();
+    //character1.showStatsFight();
 
     //Enemy enemy1 = new Enemy("enemy1");
     //enemy1.StartFight(enemy1, character1, sc);
 
     //lore.Początek();
 
-    shop.showShop(sc, character1, inventory);
+    //shop.showShop(sc, character1, inventory);
     sc.close();
 };
 

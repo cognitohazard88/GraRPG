@@ -15,6 +15,8 @@ class Enemy extends Character{
     public void StartFight(Character enemy, Character hero, Scanner scan){
         System.out.println("-----------------------------------------------------------------------------------");
         System.out.println("fight!!!");
+        int heroHealth = hero.health;
+        int enemyHealth = enemy.health;
 
         if (enemy.speed > hero.speed) {
             System.out.println(enemy.name + " goes first!");
@@ -22,7 +24,8 @@ class Enemy extends Character{
         } else {
             System.out.println(hero.name + " goes first!");
         };
-        while(hero.health > 0 && enemy.health > 0){
+
+        while(heroHealth > 0 && enemyHealth > 0){
             while(true){
                 System.out.println("what will " + hero.name + " do?");
                 System.out.println("> attack [A]");
@@ -30,13 +33,13 @@ class Enemy extends Character{
                 System.out.println("> view stats [S]");
                 String x = scan.nextLine();
                 if (x.equals("A")) {
-                    hero.attack(); //???????/
+                    hero.attackList();
                     break;
                 } else if (x.equals("I")) {
                     System.out.println("Nothing here yet..");
                 } else if (x.equals("S")) {
                     hero.showStats();
-                } else {//?????????????????????????
+                } else {
                     System.out.println("Try again...");
                 };
             };

@@ -81,6 +81,10 @@ class Character{
         this.gold = this.gold - gold;
     };
 
+    public void attackList(){
+      this.
+    };
+
     //                  _____   _____
     //      /\         |   |   |   |
     //    \====>       |   |   |   |
