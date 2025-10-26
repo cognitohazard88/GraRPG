@@ -1,9 +1,30 @@
-import java.security.PublicKey;
+import java.util.Scanner;
 
 class Inventory extends Item{
     Inventory(){
         super();
         this.amount = 0;
+    };
+
+    public void useItem(String name, Scanner scan){
+        showItemList();
+        if(amount!=0){
+            System.out.println("Którego przedmiotu chcesz użyć? (Wpisz nazwe) (E - exit)");
+            String x = scan.nextLine();
+            for(int i=0; i<currentInventory.length; i++){
+                if(x.equals(currentInventory[i][0])){
+                    System.out.println("> use item [U]\n> show description [D]");
+                    String y = scan.nextLine();
+                    if(y.equals("U")){
+                        System.out.println("Are you sure? (Y/N)");
+                        String a = scan.nextLine();
+                        if(a.equals("Y")){
+
+                        }
+                    }
+                }
+            }
+        }
     };
 
     public void removeUsedItem(String name){

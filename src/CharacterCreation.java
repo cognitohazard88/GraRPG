@@ -3,6 +3,8 @@ import java.util.Scanner;
 class Character{
     protected String name; //bluh musi być protected a nie private bo takto np Mage nie może dostać sie do nich ok?
     protected String characterClass;
+    protected String attackName;
+    protected String attackDescription;
     protected String specialAttackName;
     protected String specialAttackDescription;
     protected int level;
@@ -79,15 +81,15 @@ class Character{
         }
     };
 
-    public void attack(){};
+    public void attack(Character hero, Character enemy, int turn){};
+
+    public void specialAttack(Character hero, Character enemy, int turn){};
 
     public void setGold(int gold){
         this.gold = this.gold - gold;
     };
 
-    public void attackList(){
-      this.
-    };
+
 
     //                  _____   _____
     //      /\         |   |   |   |
