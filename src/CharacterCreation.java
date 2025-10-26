@@ -77,7 +77,9 @@ class Character{
 
     public void attack(){};
 
-
+    public void setGold(int gold){
+        this.gold = this.gold - gold;
+    };
 
     //                  _____   _____
     //      /\         |   |   |   |
