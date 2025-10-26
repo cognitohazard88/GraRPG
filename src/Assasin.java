@@ -10,16 +10,14 @@ class Assasin extends Character{
     }
 
     public void attack(Character hero, Character enemy){
-        int hero_hitting_chance = agility;
         int hero_damage = (int) Math.floor(hero.agility / 10);
         enemy.setHealth(enemy.health - hero_damage);
-        System.out.println(hero.name + " does " + hero_damage + " damage! " + enemy.name + " is at " + enemy.health + "hp!!");
+        System.out.println(hero.name + " zadaje " + hero_damage + " obrażeń! " + enemy.name + " ma " + enemy.health + "punkty zdrowia!!");
     };
 
-    public void specialattack(Character hero, Character enemy){
-        int hero_hitting_chance = 100;
+    public void specialAttack(Character hero, Character enemy){
         int hero_damage = (int) Math.floor(hero.agility / 10 + 3);
         enemy.setHealth(enemy.health - hero_damage);
-        System.out.println(hero.name + " does " + hero_damage + " damage! " + enemy.name + " is at " + enemy.health + "hp!!");
+        System.out.println(hero.name + " zadaje " + hero_damage + " obrażeń! " + enemy.name + " ma " + enemy.health + "punkty zdrowia (special attack)!!");
     }
 };

@@ -8,7 +8,7 @@ void main(String[] args) {
     Ending ending = new Ending();
     Shop shop = new Shop();
     Inventory inventory = new Inventory();
-    Character character = new Character();//papież umarł 20 min temu
+    Character character = new Character();
     int characterClass = InputClass(sc);
 
     if(characterClass == 1){
@@ -22,29 +22,29 @@ void main(String[] args) {
     };
 
     character.showStats();
-    //System.out.println(character1.getClass());
-
-    //character1.showStatsFight();
-    //Enemy enemy1 = new Enemy("enemy1");
-    //enemy1.StartFight(enemy1, character1, sc);
 
     lore.Poczatek();
     shop.showShop(sc, character, inventory);
     lore.PoSklepiePoczatkowym();
 
-    Enemy enemy1 = new Enemy("Rats");
+    Enemy enemy1 = new Enemy("Szczuru");
     Fight battle1 = new Fight();
     battle1.StartFight(enemy1, character, sc, inventory);
     lore.PoPierwszejWalce();
 
-    Enemy enemy2 = new Enemy("Priests");
+    Enemy enemy2 = new Enemy("Księża");
     battle1.StartFight(enemy2, character, sc, inventory);
-
-    Enemy enemy3 = new Enemy("Dragon");
+    lore.PoDrugiejWalce();
+    Enemy enemy3 = new Enemy("Smok");
     battle1.StartFight(enemy3, character, sc, inventory);
-
-    Enemy enemy4 = new Enemy("Prison Guards");
+    lore.PoTrzeciejWalce();
+    Enemy enemy4 = new Enemy("Strażnicy więzienia");
     battle1.StartFight(enemy4, character, sc, inventory);
+    if(characterClass == 4){
+        ending.RatunekAssasin();
+    } else {
+        ending.Ratunek();
+    }
     sc.close();
 };
 

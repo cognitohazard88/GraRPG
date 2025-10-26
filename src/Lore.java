@@ -35,7 +35,21 @@ public class Lore {
                 "\nPo zobaczeniu koszmaru dziejącego się w kiedyś tak pięknym miejscu nie możesz przejść obojętnie i wyzywasz grupę książy do walki.");
     }
     public void PoDrugiejWalce(){
-        System.out.println("Po pokonaniu księży, przeszukujesz ciała swoich przeciwników, w kieszeni jednego znajdujesz list. Zaczynasz go czytać." + );
+        System.out.println("Po pokonaniu księży, przeszukujesz ciała swoich przeciwników, w kieszeni jednego znajdujesz list. Zaczynasz go czytać." + 
+                "\n'Książe jest strzeżony w odpuszczonej twierdzy, księcia tam nikt nie będzie szukał, jeden z naszych gadał że go jakiś starzec" +
+                "\n widział ale ewidetnie gada głupoty." +
+                "\n Rozliczymy sie po akcji.' " +
+                "\n Z nową wiedzą i mapą którą zebrałeś z ciał księży zmierzasz w stronę twierdzy. Im bliżej twierdzy tym uczucie niepokoju cię pożera." +
+                "\n Twoje uczucie jest uzasadnione, kiedy nad twoją głową przelatuje smok, strażnik opuszczonej twierdzy. Musisz go pokonać żeby sie dostać do księcia.");
+    }
+    public void PoTrzeciejWalce(){
+        System.out.println("Smok upada, ostatnym rykiem wkońcu przestaje oddychać. Droga do twierdzy jest wolna. Wiesz że czasu jest coraz mniej więc musisz sie śpieszyć." +
+                "\nZabierasz pochodnię z pobliskiego uchwytu i wchodzisz w głąb fortecy. Widać że jest opuszczona, wilgoć, powyłamywane drzwi, kurz, pajęczyny. Idziesz po schodach w dół" +
+                "\nDo lochów. Jeśli gdzieś mieliby trzymać księcia, to tutaj. Skradając się widzisz światło na końcu korytarza. Na końcu lochów. Gasisz swoją pochodnię i podchodzisz bliżej." +
+                "\n'Przecież nikt by nie pomyślał że książe może być w opuszczonym lochu! Głupiś ty?' - Powiedział jeden zbój" +
+                "\n'Na bogów przysięgam! Widziałem starca! Jeszcze zmysłów nie postradałem.' - Odpowiedział mu drugi" +
+                "\n 'My tu mamy zlecenie do wykonania. Te księża nam chcą bardzo dużo zapłacić.' - Podszedł do nich trzeci" +
+                "\n Uznałeś że nie możesz czekać więcej. Wyciągasz broń i wyzywasz ich do walki.");
     }
 
 

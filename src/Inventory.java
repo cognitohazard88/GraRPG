@@ -10,23 +10,22 @@ class Inventory extends Item{
         showItemList();
         if(amount!=0){
             while(battle.yourTurn){
-                System.out.println("Którego przedmiotu chcesz użyć? (Wpisz nazwe) (E - exit)");
+                System.out.println("Którego przedmiotu chcesz użyć? (Wpisz nazwe) (E - wróć)");
                 String x = scan.nextLine();
                 if(x.equals("E")){
                     break;
                 }else{
                     for(int i=0; i<currentInventory.length; i++){
                         if(x.equals(currentInventory[i][0])){
-                            while(true){
-                                System.out.println("> use item [U]\n> show description [D]\n> exit [E]");
+                            while(battle.yourTurn){
+                                System.out.println("> Użyj przedmiotu [U]\n> Pokaż opis [D]\n> Wróć [E]");
                                 String y = scan.nextLine();
                                 if(y.equals("U")){
                                     while(true){
-                                        System.out.println("Are you sure? (Y/N)");
+                                        System.out.println("Jesteś pewien? (Y/N)");
                                         String a = scan.nextLine();
                                         if(a.equals("Y")){
-                                            useItem(i, character);
-                                            battle.addTurn();
+                                            useItem(i, character, battle);
                                             break;
                                         }else if(a.equals("N")) {
                                             break;
@@ -44,7 +43,7 @@ class Inventory extends Item{
         }
     };
 
-    public void useItem(int x, Character character){
+    public void useItem(int x, Character character, Fight battle){
         if(x == 0){
             character.setStrength(6);
         }else if(x==1){
@@ -60,13 +59,14 @@ class Inventory extends Item{
         };
 
         System.out.println(currentInventory[x][0]+" został użyty.");
-        removeUsedItem(x);
+        removeUsedItem(x, battle);
     };
 
-    public void removeUsedItem(int x){
+    public void removeUsedItem(int x, Fight battle){
         int amount = Integer.parseInt(currentInventory[x][2]);
-        amount--;
+        setAmount();
         currentInventory[x][2] = String.valueOf(amount);
+        battle.addTurn();
     };
 };
 
@@ -81,7 +81,7 @@ class Item{
                 {"Fentanyl","Zwiększa inteligęcje w walce","0"},
                 {"Okulary","Zwiększają celnośc w walce","0"},
                 {"Fursuit","Zwiększa zręczność w walce","0"},
-                {"Piwko","Uzdrawia 1k6 życia","0"},
+                {"Piwko","Uzdrawia 6 życia","0"},
                 {"Aleminium","Zwiększa pancerz 1k3 na turę","0"}
         };
     }
@@ -95,7 +95,7 @@ class Item{
             };
             for (int i = 0; i < inventoryLength; i++){
                 if (currentInventory[i][2].equals("0") == false) {
-                    System.out.println("nazwa: " + currentInventory[i][0] + " ilość: " + currentInventory[i][2]);
+                    System.out.println("Nazwa: " + currentInventory[i][0] + " Ilość: " + currentInventory[i][2]);
                 };
             };
             break;
@@ -113,7 +113,7 @@ class Item{
             for (int i = 0; i < inventoryLength; i++) {
                 if(name.equals(inventory.currentInventory[i][0])) {
                     int itemAmount = Integer.parseInt(inventory.currentInventory[i][2]) + 1;
-                    inventory.setAmount(String.valueOf(itemAmount), i);
+                    inventory.setItemAmount(String.valueOf(itemAmount), i);
                     break;
                 };
             };
@@ -121,8 +121,12 @@ class Item{
         };
     };
 
-    public void setAmount(String itemAmount, int x){
+    public void setItemAmount(String itemAmount, int x){
         this.currentInventory[x][2] = itemAmount;
         this.amount++;
+    };
+
+    public void setAmount(){
+        this.amount--;
     };
 }

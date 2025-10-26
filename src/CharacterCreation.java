@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 class Character{
-    protected String name; //bluh musi być protected a nie private bo takto np Mage nie może dostać sie do nich ok?
+    protected String name;
     protected String characterClass;
     protected String attackName;
     protected String attackDescription;
@@ -16,6 +16,7 @@ class Character{
     protected int speed;
     protected int armor;
     protected int gold;
+    protected int tempHealth;
 
     Character(){};
 
@@ -114,5 +115,19 @@ class Character{
 
     public int getHealth(){
         return health;
+    };
+
+    public int saveHealth(){
+        this.tempHealth = this.health;
+        return tempHealth;//noooo
+    };
+
+    public int setTempHealth(int tempHealth){
+        this.tempHealth = tempHealth;
+        return tempHealth;//noooo
+    };
+
+    public int getTempHealth(){
+        return tempHealth;
     };
 };

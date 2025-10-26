@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Shop extends Item{
     Shop(){
         this.currentInventory = new String[][]{
-                {"Witamina d3k2","zwieszka siłe w walce", "2"}, //name, desc, price
+                {"Witamina d3k2","zwieszka siłe w walce", "2"},
                 {"Fentanyl","Zwiększa inteligęcje w walce", "2"},
                 {"Okulary","Zwiększają celnośc w walce", "2"},
                 {"Fursuit","Zwiększa zręczność w walce", "2"},
@@ -30,7 +30,7 @@ public class Shop extends Item{
                     if(Question1 >=1 && Question1 <= 6){
                         Question1--;
                         while (true){
-                            System.out.println(currentInventory[Question1][0] + "\n> show description [D]\n> buy item [B]\n> exit [E]");
+                            System.out.println(currentInventory[Question1][0] + "\n> Pokaż opis [D]\n> Kup przedmiot [B]\n> Wróć [E]");
                             String Question2 = sc.next();
                             if (Question2.equals("D")) {
                                 showDescription(Question1);

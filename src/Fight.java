@@ -3,7 +3,6 @@ import java.util.Scanner;
 interface Attackable{
     public void attack();
     public void specialAttack();
-    public void attackList();
 };
 
 class Fight{
@@ -11,23 +10,27 @@ class Fight{
     int turn = 0;
     boolean yourTurn = true;
 
+
     public void StartFight(Character enemy, Character hero, Scanner scan, Inventory inventory){
         System.out.println("-----------------------------------------------------------------------------------");
         System.out.println("fight!!!");
+        yourTurn = true;//AHHHHHHNIENEINEI
+        
+        hero.saveHealth();
 
         if (enemy.speed > hero.speed) {
-            System.out.println(enemy.name + " goes first!" );
+            System.out.println(enemy.name + "zaczyna walke" );
             enemy.attack(enemy, hero);
         } else {
-            System.out.println(hero.name + " goes first!");
+            System.out.println(hero.name + " zaczyna walke!");
         };
 
-        while(hero.getHealth() > 0 && enemy.getHealth() > 0){
+        while(hero.getTempHealth() > 0 && enemy.getHealth() > 0){
             while(yourTurn){
-                System.out.println("what will " + hero.name + " do?");
-                System.out.println("> attack [A]");
-                System.out.println("> use item [I]");
-                System.out.println("> view stats [S]");
+                System.out.println("Co zrobi " + hero.name + "?");
+                System.out.println("> Zaatakuj [A]");
+                System.out.println("> Użyj przedmiotu [I]");
+                System.out.println("> Pokaż statystyki [S]");
                 String x;
                 x = scan.nextLine(); 
                 if (x.equals("A")) {
@@ -36,8 +39,6 @@ class Fight{
                     inventory.chooseItem(hero, scan, this);
                 } else if (x.equals("S")) {
                     hero.showStatsFight();
-                } else {
-                    System.out.println("Try again...");
                 };
             };
             if(enemy.getHealth() > 0){
@@ -46,12 +47,12 @@ class Fight{
             };
         };
 
-        if (hero.getHealth() <= 0){
-            System.out.println("You're dead!! L");
+        if (hero.getTempHealth() <= 0){
+            System.out.println("Umarłeś!!");
             ending.Smierc();
             System.exit(0);
         } else if (enemy.getHealth() <= 0){
-            System.out.println("You win!! yayyyy");
+            System.out.println("Wygrałeś!!");
         };
 
         resetTurn();
@@ -59,9 +60,9 @@ class Fight{
 
     public void attackList(Scanner sc, Character character, Character enemy, Fight battle){
         while(true){
-            System.out.println("> use " + character.attackName + " [A]");
-            System.out.println("> use " + character.specialAttackName + "(SPECIAL) [S]");
-            System.out.println("> go back [Q]");
+            System.out.println("> Użyj " + character.attackName + " [A]");
+            System.out.println("> Użyj " + character.specialAttackName + "(SPECIAL) [S]");
+            System.out.println("> Wróć [Q]");
             String attack = sc.nextLine();
             if (attack.equals("A")) {
                 character.attack(character, enemy);
@@ -73,7 +74,7 @@ class Fight{
                     battle.resetTurn();
                     break;
                 } else {
-                    System.out.println("You can't use your special attack yet!!");
+                    System.out.println("Nie możesz jeszcze użyć specjalnego ataku!! ()");
                 };
             } else if (attack.equals("Q")) {
                 break;
