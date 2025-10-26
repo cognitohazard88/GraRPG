@@ -2,10 +2,16 @@ class Assasin extends Character{
     public Assasin(String name){
         super(name,20, 20, 10, 10, 1, 10);
         this.characterClass = "Assasin";
+        this.specialAttackName = "Uderzenie z ukrycia ";
+        this.specialAttackDescription = "Twoi przeciwnicy nigdy nie zobaczą co ich uderzyło";
         maxStats();
     }
 
     public void attack(){
         //???????????????????????????????????????????????
     };
+
+    public void specialattack(){
+
+    }
 };

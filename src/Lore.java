@@ -16,6 +16,7 @@ public class Lore {
                 "\nStarzec spojrzał na ciebie w oczekiwaniu na odpowiedź wiedząc że nikt inny nie podejmie się tego zadania" +
                 "\n'To brzmi jak zadanie pełne roboty więc lepiej bądź gotowy do sowitej zapłaty'" +
                 "\nWzdychasz zmęczony, Zbierająć swoje rzeczy już czujesz jak czasochłonne będzie zlecone zadanie" +
-                "\nPo zapłaceniu za swój pobyt w karczmie wychodzisz z budynku kierując się na podany wcześniej przez starca zachód.");
+                "\nPo zapłaceniu za swój pobyt w karczmie wychodzisz z budynku kierując się do pobliskiego sklepu zanim wyruszysz w podróź." +
+                "\nWitaj w moim sklepie! Czy chcesz zobaczyć moje oferty? (Tak/Nie)");
     }
 }

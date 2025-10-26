@@ -15,7 +15,6 @@ public class Shop extends Item{
     public void showShop(Scanner sc, Character c, Item inventory){
         int exit = 1;
         while(exit == 1){
-            System.out.println("Witaj w moim sklepie! Czy chcesz zobaczyć moje oferty? (Tak/Nie)");
             String Question = sc.nextLine();
             if (Question.equals("Nie")) {
                 System.out.println("Dowidzenia. Zapraszam ponownie!");
